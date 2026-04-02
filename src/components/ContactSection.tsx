@@ -16,64 +16,33 @@ const ContactSection = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <motion.h2
-          className="text-3xl font-bold mb-2"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, type: "spring" }}
-        >
+        <h2 className="text-3xl font-bold mb-2">
           Get in <span className="text-gradient">Touch</span>
-        </motion.h2>
-        <motion.div
-          className="w-16 h-1 bg-gradient-primary rounded-full mx-auto mb-8"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        />
-        <motion.p
-          className="text-muted-foreground max-w-md mx-auto mb-10"
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
+        </h2>
+        <div className="w-16 h-1 bg-gradient-primary rounded-full mx-auto mb-8" />
+        <p className="text-muted-foreground max-w-md mx-auto mb-10">
           I'm always open to new opportunities and collaborations. Feel free to reach out!
-        </motion.p>
+        </p>
       </motion.div>
 
       <motion.div
-        initial="hidden"
-        whileInView="visible"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.15, delayChildren: 0.4 } },
-        }}
+        transition={{ duration: 0.5, delay: 0.2 }}
         className="flex justify-center gap-6"
       >
         {contacts.map(({ icon: Icon, href, label }) => (
-          <motion.a
+          <a
             key={label}
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            variants={{
-              hidden: { opacity: 0, scale: 0, rotate: -90 },
-              visible: { opacity: 1, scale: 1, rotate: 0 },
-            }}
-            whileHover={{
-              scale: 1.15,
-              y: -6,
-              transition: { type: "spring", stiffness: 400 },
-            }}
-            whileTap={{ scale: 0.9 }}
-            className="w-16 h-16 rounded-full bg-secondary border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary-foreground hover:bg-primary hover:border-primary hover:shadow-glow transition-colors duration-300"
+            className="w-16 h-16 rounded-full bg-secondary border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary-foreground hover:bg-primary hover:border-primary hover:shadow-glow transition-all duration-300"
             aria-label={label}
           >
             <Icon size={24} />
-          </motion.a>
+          </a>
         ))}
       </motion.div>
     </div>
