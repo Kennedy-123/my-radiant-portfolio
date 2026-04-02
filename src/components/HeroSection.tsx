@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Instagram } from "lucide-react";
-import heroImg from "@/assets/hero-portrait.jpg";
+import heroImg from "@/assets/pic.png";
 
 const socials = [
   { icon: Github, href: "https://github.com/Kennedy-123", label: "GitHub" },
