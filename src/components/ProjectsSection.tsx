@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 
+import jumibotImg from "@/assets/jumibot-screenshot.png";
+import autobotImg from "@/assets/autobot-academy-screenshot.png";
+import firstChoiceImg from "@/assets/firstChoice.png";
+import wayameImg from "@/assets/wayame.png";
+
 const projects = [
   {
     title: "JumiBot",
@@ -8,6 +13,7 @@ const projects = [
     tags: ["Flask", "Selenium", "React.js", "TailwindCSS", "MongoDB"],
     link: "https://github.com/Kennedy-123/jumibot",
     linkType: "code" as const,
+    image: jumibotImg,
   },
   {
     title: "Autobot Academy",
@@ -15,6 +21,7 @@ const projects = [
     tags: ["Next.js", "TailwindCSS", "Clerk", "TypeScript"],
     link: "https://autobot-academy.netlify.app",
     linkType: "live" as const,
+    image: autobotImg,
   },
   {
     title: "1stChoice Properties",
@@ -22,6 +29,7 @@ const projects = [
     tags: ["Next.js", "TailwindCSS", "TypeScript"],
     link: "https://1stchoiceproperties.com.ng",
     linkType: "live" as const,
+    image: firstChoiceImg,
   },
   {
     title: "Wayame",
@@ -29,6 +37,7 @@ const projects = [
     tags: ["React.js", "TailwindCSS", "TypeScript"],
     link: "https://wayaweb.netlify.app",
     linkType: "live" as const,
+    image: wayameImg,
   },
 ];
 
@@ -56,36 +65,50 @@ const ProjectsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group bg-gradient-card rounded-xl border border-border/50 p-6 hover:border-primary/30 hover:shadow-glow transition-all duration-500"
+            className="group bg-gradient-card rounded-xl border border-border/50 overflow-hidden hover:border-primary/30 hover:shadow-glow transition-all duration-500"
           >
-            <div className="flex items-start justify-between mb-4">
-              <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                {project.title}
-              </h3>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={project.linkType === "code" ? "View code" : "View live"}
-              >
-                {project.linkType === "code" ? <Github size={18} /> : <ExternalLink size={18} />}
-              </a>
+            {/* Project screenshot */}
+            <div className="w-full h-48 overflow-hidden">
+              <img
+                src={project.image}
+                alt={`${project.title} screenshot`}
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={600}
+                height={300}
+              />
             </div>
 
-            <p className="text-muted-foreground text-sm leading-relaxed mb-5">
-              {project.description}
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs font-mono px-3 py-1 rounded-full bg-secondary text-accent border border-accent/20"
+            <div className="p-6">
+              <div className="flex items-start justify-between mb-3">
+                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label={project.linkType === "code" ? "View code" : "View live"}
                 >
-                  {tag}
-                </span>
-              ))}
+                  {project.linkType === "code" ? <Github size={18} /> : <ExternalLink size={18} />}
+                </a>
+              </div>
+
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs font-mono px-3 py-1 rounded-full bg-secondary text-accent border border-accent/20"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
         ))}
