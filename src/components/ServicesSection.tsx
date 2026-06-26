@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-
 import webDevImg from "@/assets/web-development.jpeg";
-import automationImg from "@/assets/automation-banner.webp";
 import mobileDevImg from "@/assets/mobile-development.jpg";
+import seoImg from "@/assets/SEO-pic.jpg"
 
 const services = [
   {
@@ -11,9 +10,9 @@ const services = [
     image: webDevImg,
   },
   {
-    title: "Automation Bots",
-    description: "Build bots to automate tasks like scraping, monitoring, or testing.",
-    image: automationImg,
+    title: "SEO Optimization",
+    description: "Improve your website's visibility in search engine results and drive more organic traffic.",
+    image: seoImg,
   },
   {
     title: "App Development",

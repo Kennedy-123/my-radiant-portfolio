@@ -1,10 +1,17 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Instagram } from "lucide-react";
+import { SocialIcon } from "react-social-icons";
 
 const contacts = [
-  { icon: Mail, href: "mailto:kennedyokolo222@gmail.com", label: "Email" },
-  { icon: Linkedin, href: "https://linkedin.com/in/kennedy-okolo-888b4728a", label: "LinkedIn" },
-  { icon: Instagram, href: "https://www.instagram.com/okolo_kennedy", label: "Instagram" },
+  { href: "mailto:kennedyokolo222@gmail.com", label: "Email" },
+  {
+    href: "https://linkedin.com/in/kennedy-okolo-888b4728a",
+    label: "LinkedIn",
+  },
+  { href: "https://www.instagram.com/okolo_kennedy", label: "Instagram" },
+  {
+    href: "https://www.tiktok.com/@kennedy_okolo?_r=1&_t=ZS-97XdGHfQWxh",
+    label: "TikTok",
+  },
 ];
 
 const ContactSection = () => (
@@ -21,7 +28,8 @@ const ContactSection = () => (
         </h2>
         <div className="w-16 h-1 bg-gradient-primary rounded-full mx-auto mb-8" />
         <p className="text-muted-foreground max-w-md mx-auto mb-10">
-          I'm always open to new opportunities and collaborations. Feel free to reach out!
+          I'm always open to new opportunities and collaborations. Feel free to
+          reach out!
         </p>
       </motion.div>
 
@@ -32,16 +40,15 @@ const ContactSection = () => (
         transition={{ duration: 0.5, delay: 0.2 }}
         className="flex justify-center gap-6"
       >
-        {contacts.map(({ icon: Icon, href, label }) => (
+        {contacts.map(({ href, label }) => (
           <a
             key={label}
-            href={href}
             target="_blank"
             rel="noopener noreferrer"
             className="w-16 h-16 rounded-full bg-secondary border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary-foreground hover:bg-primary hover:border-primary hover:shadow-glow transition-all duration-300"
             aria-label={label}
           >
-            <Icon size={24} />
+            <SocialIcon url={href} />
           </a>
         ))}
       </motion.div>

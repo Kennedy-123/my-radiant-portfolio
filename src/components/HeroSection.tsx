@@ -1,15 +1,28 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Instagram } from "lucide-react";
+import { SocialIcon } from "react-social-icons";
 import heroImg from "@/assets/pic.png";
 
 const socials = [
-  { icon: Github, href: "https://github.com/Kennedy-123", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/kennedy-okolo-888b4728a", label: "LinkedIn" },
-  { icon: Instagram, href: "https://www.instagram.com/okolo_kennedy", label: "Instagram" },
+  { href: "https://github.com/Kennedy-123", label: "GitHub" },
+  {
+    href: "https://linkedin.com/in/kennedy-okolo-888b4728a",
+    label: "LinkedIn",
+  },
+  {
+    href: "https://www.instagram.com/okolo_kennedy",
+    label: "Instagram",
+  },
+  {
+    href: "https://www.tiktok.com/@kennedy_okolo?_r=1&_t=ZS-97XdGHfQWxh",
+    label: "TikTok",
+  },
 ];
 
 const HeroSection = () => (
-  <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+  <section
+    id="home"
+    className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
+  >
     {/* Background glow */}
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
 
@@ -59,16 +72,13 @@ const HeroSection = () => (
         transition={{ delay: 0.7 }}
         className="flex gap-4 mt-10"
       >
-        {socials.map(({ icon: Icon, href, label }) => (
-          <a
-            key={label}
-            href={href}
+        {socials.map((social) => (
+          <a key={social.label}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 hover:shadow-glow transition-all duration-300"
-            aria-label={label}
-          >
-            <Icon size={20} />
+            className="w-16 h-16 rounded-full bg-secondary border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary-foreground hover:bg-primary hover:border-primary hover:shadow-glow transition-all duration-300"
+            aria-label={social.label}>
+            <SocialIcon url={social.href} />
           </a>
         ))}
       </motion.div>
