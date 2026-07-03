@@ -13,7 +13,7 @@ const AboutSection = () => (
           About <span className="text-gradient">Me</span>
         </h2>
         <div className="w-16 h-1 bg-gradient-primary rounded-full mb-8" />
-        <p className="text-muted-foreground leading-relaxed text-lg">
+        <p className="text-white leading-relaxed text-lg">
           Hi, I'm Kennedy, a freelance web developer dedicated to helping
           businesses establish a strong online presence. I design and build
           modern, responsive, and high-performing websites that not only look

@@ -1,19 +1,18 @@
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
-
-import jumibotImg from "@/assets/jumibot-screenshot.png";
+import { ExternalLink } from "lucide-react";
+import valloraImg from "@/assets/vallora-luxe.png";
 import autobotImg from "@/assets/autobot-academy-screenshot.png";
 import firstChoiceImg from "@/assets/firstChoice.png";
 import wayameImg from "@/assets/wayame.png";
 
 const projects = [
   {
-    title: "JumiBot",
-    description: "A price-tracking bot for Jumia that monitors product prices and sends email alerts when prices drop.",
-    tags: ["Flask", "Selenium", "React.js", "TailwindCSS", "MongoDB"],
-    link: "https://github.com/Kennedy-123/jumibot",
-    linkType: "code" as const,
-    image: jumibotImg,
+    title: "Vallora Luxe",
+    description: "A luxury lifestyle brand website showcasing high-end fashion and accessories.",
+    tags: ["React.js", "TailwindCSS", "TypeScript"],
+    link: "https://vallora-luxe.netlify.app",
+    linkType: "live" as const,
+    image: valloraImg,
   },
   {
     title: "Autobot Academy",
@@ -27,7 +26,7 @@ const projects = [
     title: "1stChoice Properties",
     description: "A modern property listing platform for Nigeria, helping users discover, rent, and buy homes with ease.",
     tags: ["Next.js", "TailwindCSS", "TypeScript"],
-    link: "https://1stchoiceproperties.com.ng",
+    link: "https://www.1stchoiceproperties.com.ng",
     linkType: "live" as const,
     image: firstChoiceImg,
   },
@@ -89,9 +88,9 @@ const ProjectsSection = () => (
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label={project.linkType === "code" ? "View code" : "View live"}
+                  aria-label="View live"
                 >
-                  {project.linkType === "code" ? <Github size={18} /> : <ExternalLink size={18} />}
+                  <ExternalLink size={18} />
                 </a>
               </div>
 
