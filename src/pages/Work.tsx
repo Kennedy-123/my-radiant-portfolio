@@ -29,28 +29,6 @@ const Work = () => {
         }
         lead="Live products I've designed and built — from luxury e-commerce to fintech and education platforms."
       >
-        {/* <Reveal delay={0.2}>
-          <LayoutGroup>
-            <div className="mt-10 flex flex-wrap gap-2" role="group" aria-label="Filter projects by technology">
-              {filters.map((f) => (
-                <button
-                  key={f}
-                  onClick={() => setFilter(f)}
-                  aria-pressed={filter === f}
-                  className={cn(
-                    "relative rounded-full border px-4 py-2 text-sm font-medium transition-colors",
-                    filter === f ? "border-foreground text-background" : "border-border text-muted-foreground hover:text-foreground",
-                  )}
-                >
-                  {filter === f && (
-                    <motion.span layoutId="work-filter" className="absolute inset-0 rounded-full bg-foreground" transition={{ type: "spring", stiffness: 380, damping: 32 }} />
-                  )}
-                  <span className="relative">{f}</span>
-                </button>
-              ))}
-            </div>
-          </LayoutGroup>
-        </Reveal> */}
       </PageIntro>
 
       <section className="container pb-24 md:pb-32">

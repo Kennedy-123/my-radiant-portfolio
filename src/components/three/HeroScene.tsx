@@ -4,7 +4,6 @@ import * as THREE from "three";
 import Stage from "./Stage";
 import Dust from "./Dust";
 import { BRAND } from "./materials";
-import { pointer } from "./pointer";
 import type { SceneProps } from "./SceneFrame";
 import portraitUrl from "@/assets/pic.png";
 
@@ -116,10 +115,9 @@ const Portrait = () => {
     [],
   );
 
-  useFrame((state, delta) => {
+  useFrame((state) => {
     const t = state.clock.elapsedTime;
     material.uniforms.uTime.value = t;
-    material.uniforms.uEnergy.value = THREE.MathUtils.damp(material.uniforms.uEnergy.value, Math.hypot(pointer.x, pointer.y), 2, delta);
     if (mesh.current) mesh.current.rotation.z = Math.sin(t * 0.3) * 0.03;
   });
 
@@ -154,17 +152,12 @@ const Hero = ({ layout }: { layout: Layout }) => {
     baseY = (size.height / 2 - (80 + radiusPx)) / pxPerUnit;
   }
 
-  // Only a little tilt so the face stays readable
-  const tilt = 0.25;
-
   useFrame((_, delta) => {
     const scroll = layout === "hero" ? Math.min(window.scrollY / window.innerHeight, 1.5) : 0;
     const g = group.current;
     if (!g) return;
-    g.position.x = THREE.MathUtils.damp(g.position.x, baseX + pointer.x * 0.3, 2.5, delta);
-    g.position.y = THREE.MathUtils.damp(g.position.y, baseY + pointer.y * 0.2 + scroll * 1.6, 2.5, delta);
-    g.rotation.x = THREE.MathUtils.damp(g.rotation.x, -pointer.y * tilt * 0.75, 2.5, delta);
-    g.rotation.y = THREE.MathUtils.damp(g.rotation.y, pointer.x * tilt, 2.5, delta);
+    g.position.x = THREE.MathUtils.damp(g.position.x, baseX, 2.5, delta);
+    g.position.y = THREE.MathUtils.damp(g.position.y, baseY + scroll * 1.6, 2.5, delta);
   });
 
   return (
