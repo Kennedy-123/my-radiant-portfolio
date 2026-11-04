@@ -4,6 +4,7 @@ import firstChoiceImg from "@/assets/firstChoice.png";
 import wayameImg from "@/assets/wayame.png";
 import fourTowerHotel from "@/assets/four-tower-hotel.png";
 import surulereGrooveParty from "@/assets/surulere-groove-party.png";
+import decasaluxuria from "@/assets/decasaluxuria.png";
 
 export const site = {
   name: "Kennedy Okolo",
@@ -53,16 +54,7 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  {
-    slug: "vallora-luxe",
-    title: "Vallora Luxe",
-    category: "E-commerce · Brand",
-    description:
-      "A luxury lifestyle brand website showcasing high-end fashion and accessories.",
-    tags: ["React.js", "TailwindCSS", "TypeScript"],
-    link: "https://vallora-luxe.netlify.app",
-    image: valloraImg,
-  },
+  
   {
     slug: "surulere-groove-party",
     title: "Surulere Groove Party",
@@ -72,6 +64,46 @@ export const projects: Project[] = [
     tags: ["React.js", "TailwindCSS", "TypeScript", "Python", "FastAPI"],
     link: "https://suruleregrooveparty.com",
     image: surulereGrooveParty,
+  },
+    {
+    slug: "decasaluxuria",
+    title: "Decasa Luxuria",
+    category: "Real Estate · Listings",
+    description:
+      "A booking website for luxury shortlet apartments, letting guests explore fully serviced spaces, view amenities, and reserve their stay by date and guest count.",
+    tags: ["React.js", "TailwindCSS", "TypeScript"],
+    link: "https://www.decasaluxuria.com",
+    image: decasaluxuria,
+  },
+    {
+    slug: "1stchoice-properties",
+    title: "1stChoice Properties",
+    category: "Real Estate · Listings",
+    description:
+      "A modern property listing platform for Nigeria, helping users discover, rent, and buy homes with ease.",
+    tags: ["Next.js", "TailwindCSS", "TypeScript", "node.js", "Express.js"],
+    link: "https://www.1stchoiceproperties.com.ng",
+    image: firstChoiceImg,
+  },
+    {
+    slug: "wayame",
+    title: "Wayame",
+    category: "Fintech · Payments",
+    description:
+      "A secure money transfer platform enabling users to send funds from EUR to NGN quickly and affordably.",
+    tags: ["React.js", "TailwindCSS", "TypeScript", "node.js", "Express.js"],
+    link: "https://wayaweb.netlify.app",
+    image: wayameImg,
+  },
+  {
+    slug: "vallora-luxe",
+    title: "Vallora Luxe",
+    category: "E-commerce · Brand",
+    description:
+      "A luxury lifestyle brand website showcasing high-end fashion and accessories.",
+    tags: ["React.js", "TailwindCSS", "TypeScript"],
+    link: "https://vallora-luxe.netlify.app",
+    image: valloraImg,
   },
   {
     slug: "four-tower-hotel",
@@ -84,16 +116,6 @@ export const projects: Project[] = [
     image: fourTowerHotel,
   },
   {
-    slug: "wayame",
-    title: "Wayame",
-    category: "Fintech · Payments",
-    description:
-      "A secure money transfer platform enabling users to send funds from EUR to NGN quickly and affordably.",
-    tags: ["React.js", "TailwindCSS", "TypeScript", "node.js", "Express.js"],
-    link: "https://wayaweb.netlify.app",
-    image: wayameImg,
-  },
-  {
     slug: "autobot-academy",
     title: "Autobot Academy",
     category: "EdTech · Platform",
@@ -102,17 +124,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "TailwindCSS", "Clerk", "TypeScript"],
     link: "https://autobot-academy.netlify.app",
     image: autobotImg,
-  },
-  {
-    slug: "1stchoice-properties",
-    title: "1stChoice Properties",
-    category: "Real Estate · Listings",
-    description:
-      "A modern property listing platform for Nigeria, helping users discover, rent, and buy homes with ease.",
-    tags: ["Next.js", "TailwindCSS", "TypeScript", "node.js", "Express.js"],
-    link: "https://www.1stchoiceproperties.com.ng",
-    image: firstChoiceImg,
-  },
+  }
 ];
 
 export const services = [
